@@ -1,0 +1,85 @@
+NAME: Data from the game "Pass the Pigs"
+TYPE: Observational
+SIZE: 6000 Observations, 5 Variables
+
+
+DESCRIPTIVE ABSTRACT:
+This dataset contains information collected from rolling the pair of
+pigs (found in the game "Pass the Pigs") 6000 times. A description of
+the rules, scoring configurations, and data collection method are
+included in the accompanying paper.
+
+BRIEF DESCRIPTION of "PASS THE PIGS": 
+A player rolls two pig-shaped rubber dice and earns or loses points
+depending on the configuration of the rolled pigs. Players compete
+individually to earn 100 points.
+
+
+VARIABLE DESCRIPTIONS: 
+Each row of the data set represents information collected on a single
+roll of the pigs. There are 6000 rows, and 6 space-delimited columns.
+
+-COLUMN 1 (roll): The roll number. 
+            Values are unique integers 1 through 6000. 
+  
+-COLUMN 2 (black): The position number of the marked (black) pig.
+            Values are integers from 1 to 7:
+		   1 = Dot Up
+		   2 = Dot Down
+		   3 = Trotter
+		   4 = Razorback
+		   5 = Snouter
+		   6 = Leaning Jowler
+		   7 = Pigs are touching one another  
+
+-COLUMN 3 (pink): The position number of the unmarked (pink) pig.
+	    Values are the integers from 1 to 7 as above.
+		     
+-COLUMN 4 (score): The score of the roll. All scores are face-value
+   from the ten integer set {-1, 0, 1, 5, 10, 15, 20, 25, 40, 60}
+   except the artificial score of -1. A score of -1 means the pigs
+   came to rest touching each another.
+
+-COLUMN 5 (height): The height from which the pigs were rolled. 
+	    Values are the integers 1 = (5 inch) and 0 = (8 inch).
+
+-COLUMN 6 (start): The starting position of the rolled pigs. 
+	    Values are the integers 0 = (Both pigs forward)
+				    1 = (Both pigs backward)
+				    2 = (One backward, one forward) 
+
+
+SPECIAL NOTES:
+To keep track of the virtually indistinguishable pigs, we marked the
+snout of one pig with a black marker. If one pig lands in position 7,
+so must the other pig. This outcome ends the turn of the roller, and
+sets the total score for the roller to zero. Any outcome yielding a
+score of zero points ends the turn of the roller, and sets the score
+earned for that turn (and only that turn) to zero.
+
+
+PEDAGOGICAL NOTES:
+These data provide an opportunity for students of Bayesian inference
+to estimate the ten scoring probabilities using a multinomial-Dirichlet
+model. Of special interest is the availability of prior information:
+the accompanying scores allow for transparent prior specification (up
+to a single strength-of-prior-belief parameter). The Dirichlet
+posterior provides point estimates for the unknown scoring
+probabilities, and allows for simulation from the posterior predictive
+distribution of the next roll score. Independent realizations from
+this predictive distribution are then used to examine the
+effectiveness of various strategies.
+
+Classical analyses can be employed to test for the symmetry between
+the black an pink pigs, as well as for the effect of the roll height
+or starting position. 
+
+
+SUBMITTED BY:
+John C. Kern II
+Duquesne University
+600 Forbes Avenue
+440 College Hall
+Pittsburgh, PA   15282
+kern@mathcs.duq.edu
+
