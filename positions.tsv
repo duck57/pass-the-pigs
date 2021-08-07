@@ -1,8 +1,8 @@
-Result	Name	Black	Black %	Pink	Pink %	Total	Overall %	Weight
-1	Dot Up	1796	29.93	1811	30.18	3607	30.06	3600
-2	Dot Down	2063	34.38	2117	35.28	4180	34.83	4180
-3	Trotter	551	9.18	506	8.43	1057	8.81	1080
-4	Razorback	1354	22.57	1320	22.0	2674	22.28	2666
-5	Snouter	184	3.07	179	2.98	363	3.02	360
-6	Leaning Jowler	29	0.48	44	0.73	73	0.61	72
-7	Touching	23	0.38	23	0.38	46	0.38	48
+Result	Name	Black	Black %	Pink	Pink %	Difference	% Different	Total	Overall %
+1	Dot Up	1796	29.93	1811	30.18	15	0.42	3607	30.06
+2	Dot Down	2063	34.38	2117	35.28	54	1.29	4180	34.83
+3	Trotter	551	9.18	506	8.43	45	4.26	1057	8.81
+4	Razorback	1354	22.57	1320	22.0	34	1.27	2674	22.28
+5	Snouter	184	3.07	179	2.98	5	1.38	363	3.02
+6	Leaning Jowler	29	0.48	44	0.73	15	20.55	73	0.61
+7	Touching	23	0.38	23	0.38	0	0.0	46	0.38

@@ -11,6 +11,7 @@ important finding: ~0.4% of rolls end up with touching pigs
 from csv import DictReader
 from collections import Counter
 from typing import Dict
+import sys
 
 f = DictReader(open("pig.dat.txt", "r"), delimiter=" ")
 black, pink, score = Counter(), Counter(), Counter()
@@ -38,7 +39,18 @@ for roll in f:
     add_one("score")
 
 value_table: str = "\t".join(
-    ["Result", "Name", "Black", "Black %", "Pink", "Pink %", "Total", "Overall %"]
+    [
+        "Result",
+        "Name",
+        "Black",
+        "Black %",
+        "Pink",
+        "Pink %",
+        "Difference",
+        "% Different",
+        "Total",
+        "Overall %",
+    ]
 )
 for val in pos_names.keys():
     b: int = black[val]
@@ -53,6 +65,8 @@ for val in pos_names.keys():
                 round(b / count * 100, 2),
                 p,
                 round(p / count * 100, 2),
+                abs(b - p),
+                round(abs(b - p) / (b + p) * 100, 2),
                 b + p,
                 round((p + b) / (count * 2) * 100, 2),
             ]
@@ -75,6 +89,14 @@ score_table: str = "\n".join(
         for score_point in sorted(score.keys())
     ]
 )
+
+with open("positions.tsv", "w") as pos:
+    pos.write(value_table)
+with open("scores.tsv", "w") as scr:
+    scr.write(score_table)
+
+
+sys.exit(0)  # comment this out to display results on-screen
 
 print(value_table)
 print("\n\n")
